@@ -1,0 +1,26 @@
+package com.example.a387randomizer;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import java.util.Random;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        val rollButton = findViewById<Button>(R.id.RanButton);
+        val resultsTextView = findViewById<TextView>(R.id.textView);
+        val seekBar = findViewById<SeekBar>(R.id.seekBar);
+
+        rollButton.setOnClickListener;{
+            val rand = new Random().nextInt(seekBar.progress) + 1;
+            resultsTextView.text = rand.toString();
+        }
+    }
+}
